@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIB</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+
+        .navbar-nav {
+            text-align: left;
+        }
+
+            .navbar-nav .nav-link {
+                color: #ffffff;
+                margin-right: 15px;
+                transition: color 0.3s ease-in-out;
+            }
+
+                .navbar-nav .nav-link:hover {
+                    color: #17a2b8;
+                }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+            .navbar-toggler:focus {
+                outline: none;
+            }
+
+        .navbar-collapse {
+            justify-content: flex-start;
+        }
+
+        .nav-item {
+            margin-bottom: 5px;
+        }
+
+        .navbar-text {
+            color: #ffffff;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    @{
+        Kullanicilar kullanici = Session["kullanici"] as Kullanicilar;
+    }
+
+    <div class="container-fluid">
+        <!-- Navbar başlangıcı -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">LIB</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        @if (Session["GirisDurumu"] != null && (bool)Session["GirisDurumu"])
+                        {
+                            <li class="nav-item">
+                                @Html.ActionLink("Ana Sayfa", "Index", "Kitaplars", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Çıkış Yap", "Logout", "Kullanicilar", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Hakkimizda", "Index", "Hakkimizda", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                            
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                @Html.ActionLink("Ana Sayfa", "Index", "Kitaplars", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Giriş Yap", "Login", "Kullanicilar", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Kayıt Ol", "Register", "Kullanicilar", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Hakkimizda", "Index", "Hakkimizda", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                        }
+                    </ul>
+                </div>
+                @if (Session["GirisDurumu"] != null && (bool)Session["GirisDurumu"])
+                {
+                    <span class="navbar-text nav-link" href="#" style="background-color: #17a2b8; border-radius: 5px; padding: 8px;">
+                        Hoş geldin, @kullanici.Ad @kullanici.Soyad
+                    </span>
+                }
+            </div>
+        </nav>
+        <!-- Navbar bitişi -->
+        <!-- Diğer body içeriği -->
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", required: false)
+    <!-- Bootstrap JS ve jQuery eklemeyi unutmayın -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-pzjw8Y+JqVZ8FffzDxzc8MIH6p1K46fI7frE3NGmYUnhCAzF5FfFjK1pfF79bmMO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-ZOqFfIQDBzJw1vZfT+56Cc4pU8KXrtL9FF2To6sDIi9f7f5Uqq7I6FLFkN2E1r" crossorigin="anonymous"></script>
+</body>
+</html>

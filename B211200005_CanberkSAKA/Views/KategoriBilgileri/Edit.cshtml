@@ -1,0 +1,33 @@
+﻿@model B211200005_CanberkSAKA.Kategoriler
+
+@{
+    ViewBag.Title = "Kategoriyi Düzenle";
+    Layout = "~/Views/Shared/_YoneticilerNavbar.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Kategoriyi Düzenle</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="KategoriAdi" class="form-label">Kategori Adı</label>
+                    @Html.EditorFor(model => model.KategoriAdi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.KategoriAdi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.HiddenFor(model => model.KategoriID)
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+                @Html.ActionLink("Listeye Geri Dön", "Index", null, new { @class = "btn btn-secondary" })
+            </div>
+        </div>
+    }
+</div>

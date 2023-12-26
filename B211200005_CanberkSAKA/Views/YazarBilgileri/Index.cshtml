@@ -1,0 +1,37 @@
+﻿@model IEnumerable<B211200005_CanberkSAKA.Yazarlar>
+
+@{
+    ViewBag.Title = "Yazarlar";
+    Layout = "~/Views/Shared/_YoneticilerNavbar.cshtml";
+}
+
+<div class="container mt-4">
+
+    <p>
+        @Html.ActionLink("Yeni Oluştur", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.AdSoyad)
+                </th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdSoyad)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sil", "Delete", new { id = item.YazarID }, new { @class = "btn btn-danger btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>

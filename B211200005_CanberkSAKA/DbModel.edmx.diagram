@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2d862116bdf04a5090427d5fde52f5b7" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="KITAPSATISModel.Kategoriler" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.KitapAciklamalari" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.Kitaplar" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.KitapYazarIliskisi" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.KitapYildizlari" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.Kullanicilar" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.SiparisDetaylari" Width="1.5" PointX="8.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.Siparisler" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.Tur" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.Yayinevleri" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.Yazarlar" Width="1.5" PointX="6" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KITAPSATISModel.Yoneticiler" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="KITAPSATISModel.FK__Kitaplar__Katego__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="KITAPSATISModel.FK__KitapAcik__Kitap__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="KITAPSATISModel.FK__Kitaplar__TurID__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="KITAPSATISModel.FK__Kitaplar__Yayine__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="KITAPSATISModel.FK__KitapYaza__Kitap__5535A963" />
+        <AssociationConnector Association="KITAPSATISModel.FK__KitapYild__Kitap__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="KITAPSATISModel.FK__SiparisDe__Kitap__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="KITAPSATISModel.FK__KitapYaza__Yazar__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="KITAPSATISModel.FK__Siparisle__Kulla__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="KITAPSATISModel.FK__SiparisDe__Sipar__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="KITAPSATISModel.FK_Kitaplar_Yazarlar" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

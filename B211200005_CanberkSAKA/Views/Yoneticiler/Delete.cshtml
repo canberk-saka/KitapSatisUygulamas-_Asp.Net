@@ -1,0 +1,106 @@
+﻿@model B211200005_CanberkSAKA.Kitaplar
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_YoneticilerNavbar.cshtml";
+
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Kitaplar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KitapAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KitapAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YildizID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YildizID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StokMiktari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StokMiktari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KitapResim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KitapResim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AciklamaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AciklamaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategoriler.KategoriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategoriler.KategoriAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tur.TurAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tur.TurAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayinevleri.Ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayinevleri.Ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yazarlar.AdSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yazarlar.AdSoyad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

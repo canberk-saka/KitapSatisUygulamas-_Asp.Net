@@ -1,0 +1,99 @@
+﻿@model B211200005_CanberkSAKA.Kitaplar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "YoneticilerController";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kitaplar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KitapAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KitapAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YildizID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YildizID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StokMiktari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StokMiktari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KitapResim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KitapResim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AciklamaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AciklamaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategoriler.KategoriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategoriler.KategoriAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tur.TurAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tur.TurAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayinevleri.Ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayinevleri.Ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yazarlar.AdSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yazarlar.AdSoyad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KitapID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

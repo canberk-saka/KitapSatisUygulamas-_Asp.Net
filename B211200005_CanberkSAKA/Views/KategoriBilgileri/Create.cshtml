@@ -1,0 +1,32 @@
+﻿@model B211200005_CanberkSAKA.Kategoriler
+
+@{
+    ViewBag.Title = "Yeni Kategori Ekle";
+    Layout = "~/Views/Shared/_YoneticilerNavbar.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Yeni Kategori Ekle</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="KategoriAdi" class="form-label">Kategori Adı</label>
+                    @Html.EditorFor(model => model.KategoriAdi, new { htmlAttributes = new { @class = "form-control", placeholder = "Kategori adını girin" } })
+                    @Html.ValidationMessageFor(model => model.KategoriAdi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Ekle</button>
+                @Html.ActionLink("Listeye Geri Dön", "Index", null, new { @class = "btn btn-secondary" })
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,40 @@
+﻿@model B211200005_CanberkSAKA.Kitaplar
+
+@{
+    ViewBag.Title = "Satın Alma Sayfası";
+    Layout = "~/Views/Shared/_Navbar.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title mb-4">Kitap Satın Alma</h2>
+
+            @using (Html.BeginForm("Buy", "Kitaplars", FormMethod.Post, new { id = "buyForm" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <input type="hidden" name="kitapId" value="@ViewBag.KitapId" />
+
+                <div class="mb-3">
+                    <p class="card-text"><strong>Kitap Adı:</strong> @ViewBag.KitapAdi</p>
+                    <p class="card-text"><strong>Fiyat:</strong> @ViewBag.Fiyat₺</p>
+                </div>
+
+                <div class="mb-3">
+                    <button type="button" class="btn btn-primary" id="buyButton">Satın Al</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        document.getElementById('buyButton').addEventListener('click', function () {
+            if (confirm('Satın almayı onaylıyor musunuz?')) {
+                document.getElementById('buyForm').submit();
+            }
+        });
+    </script>
+}

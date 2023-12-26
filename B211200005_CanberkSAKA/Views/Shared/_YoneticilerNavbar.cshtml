@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Uygulama Adı</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+
+        .navbar-nav {
+            text-align: left;
+        }
+
+            .navbar-nav .nav-link {
+                color: #ffffff;
+                margin-right: 15px;
+                transition: color 0.3s ease-in-out;
+            }
+
+                .navbar-nav .nav-link:hover {
+                    color: #17a2b8;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">LIB</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            @Html.ActionLink("Kitap Bilgileri", "Index", "Yoneticiler", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Kullanıcı Bilgileri", "Index", "KullaniciBilgileri", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Tür Bilgileri", "Index", "TurBilgileri", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Kategori Bilgileri", "Index", "KategoriBilgileri", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Yayın Evi Bilgileri", "Index", "YayineviBilgileri", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Yazar Bilgileri", "Index", "YazarBilgileri", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", required: false)
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-pzjw8Y+JqVZ8FffzDxzc8MIH6p1K46fI7frE3NGmYUnhCAzF5FfFjK1pfF79bmMO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-ZOqFfIQDBzJw1vZfT+56Cc4pU8KXrtL9FF2To6sDIi9f7f5Uqq7I6FLFkN2E1r" crossorigin="anonymous"></script>
+</body>
+</html>

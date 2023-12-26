@@ -1,0 +1,38 @@
+﻿@model IEnumerable<B211200005_CanberkSAKA.Tur>
+
+@{
+    ViewBag.Title = "Türler";
+    Layout = "~/Views/Shared/_YoneticilerNavbar.cshtml";
+}
+
+<div class="container mt-4">
+    
+
+    <p>
+        @Html.ActionLink("Yeni Oluştur", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.TurAdi)
+                </th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TurAdi)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sil", "Delete", new { id = item.TurID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
